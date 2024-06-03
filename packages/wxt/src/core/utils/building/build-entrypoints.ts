@@ -22,7 +22,8 @@ export async function buildEntrypoints(
       steps.push(await wxt.builder.build(group));
     } catch (err) {
       spinner.stop().clear();
-      wxt.logger.error(err);
+      console.error(err);
+      // wxt.logger.error(err);
       throw Error(`Failed to build ${groupNames.join(', ')}`, { cause: err });
     }
   }
